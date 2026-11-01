@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>SayBeer - Chế độ nhậu</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            amber: {
+              350: '#FBBF24',
+              450: '#F59E0B',
+              550: '#D97706',
+              925: '#1E160C',
+              950: '#120D06'
+            },
+            surface: {
+              card: '#1D1A16',
+              cardBorder: '#2E271F',
+              bg: '#0E0C0A'
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Segoe UI"', 'Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-styling">
+    /* Custom glow effects for amber accent */
+    .amber-glow {
+      box-shadow: 0 0 20px -3px rgba(245, 158, 11, 0.25);
+    }
+    .amber-glow-sm {
+      box-shadow: 0 0 10px -2px rgba(245, 158, 11, 0.35);
+    }
+    /* Smooth touch feedback for mobile */
+    .tap-highlight-transparent {
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-surface-bg text-[#EDE6DE] antialiased selection:bg-amber-500/30 selection:text-amber-200 min-h-screen flex justify-center">
+<!-- Mobile iOS Frame Container -->
+<div class="w-full max-w-md min-h-screen flex flex-col px-5 pt-3 pb-8 select-none">
+<!-- BEGIN: TopBar -->
+<!-- Status & Header Navigation -->
+<header class="sticky top-0 z-20 bg-surface-bg/90 backdrop-blur-md pt-3 pb-4">
+<div class="flex items-center gap-4">
+<!-- Back Button -->
+<button aria-label="Quay lại" class="tap-highlight-transparent p-2 -ml-2 rounded-full text-amber-400 hover:text-amber-300 hover:bg-white/5 active:scale-95 transition-all" type="button">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Page Title -->
+<h1 class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+<span>Chế độ nhậu</span>
+<span class="inline-block w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+</h1>
+</div>
+</header>
+<!-- END: TopBar -->
+<!-- BEGIN: MainContent -->
+<main class="flex-1 space-y-7 mt-2">
+<!-- BEGIN: LockAppsSection -->
+<section data-purpose="app-selection-section">
+<h2 class="text-xs uppercase font-bold tracking-wider text-[#A39281] mb-2.5 px-0.5">
+          App cần khóa
+        </h2>
+<!-- Interactive Card to choose apps -->
+<div class="relative group tap-highlight-transparent cursor-pointer bg-surface-card hover:bg-[#25201A] border border-surface-cardBorder rounded-2xl p-4 transition-all duration-200 active:scale-[0.99] amber-glow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3.5">
+<!-- App Grid Icon -->
+<div class="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:text-amber-300 transition-colors">
+<svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+<path d="M4 4h4v4H4V4zm6 0h4v4h-4V4zm6 0h4v4h-4V4zM4 10h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4zM4 16h4v4H4v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4z"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="text-base font-semibold text-white group-hover:text-amber-100 transition-colors">
+                  Chọn app cần khóa
+                </span>
+<span class="text-xs text-[#8C7D6F]">Ngăn chặn gửi tin nhắn hoặc gọi điện</span>
+</div>
+</div>
+<!-- Status Indicator & Chevron -->
+<div class="flex items-center space-x-2">
+<span class="text-sm font-medium text-amber-400/90 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/20">
+                Chưa chọn
+              </span>
+<svg class="w-5 h-5 text-[#736456]" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</div>
+</section>
+<!-- END: LockAppsSection -->
+<!-- BEGIN: DurationSection -->
+<section data-purpose="lock-duration-section">
+<h2 class="text-xs uppercase font-bold tracking-wider text-[#A39281] mb-2.5 px-0.5">
+          Khóa đến
+        </h2>
+<div class="bg-surface-card border border-surface-cardBorder rounded-2xl p-4.5 space-y-4">
+<!-- Time preset chips -->
+<div class="grid grid-cols-3 gap-2.5">
+<!-- Active Chip -->
+<button class="tap-highlight-transparent relative py-3 px-2 rounded-xl text-sm font-semibold text-amber-950 bg-gradient-to-r from-amber-400 via-amber-350 to-amber-500 shadow-md amber-glow text-center transition active:scale-95" type="button">
+              6h sáng
+            </button>
+<!-- Regular Chip +4h -->
+<button class="tap-highlight-transparent py-3 px-2 rounded-xl text-sm font-medium text-[#C8B8A6] bg-[#26211A] hover:bg-[#302A21] border border-surface-cardBorder text-center transition active:scale-95" type="button">
+              +4 giờ
+            </button>
+<!-- Regular Chip +8h -->
+<button class="tap-highlight-transparent py-3 px-2 rounded-xl text-sm font-medium text-[#C8B8A6] bg-[#26211A] hover:bg-[#302A21] border border-surface-cardBorder text-center transition active:scale-95" type="button">
+              +8 giờ
+            </button>
+</div>
+<!-- Custom duration option -->
+<div>
+<button class="tap-highlight-transparent inline-flex items-center gap-1.5 py-2.5 px-4 rounded-xl text-sm font-medium text-[#D1C2B0] bg-[#26211A] hover:bg-[#302A21] border border-surface-cardBorder transition active:scale-95" type="button">
+<svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Tùy chọn thời lượng</span>
+</button>
+</div>
+<!-- Unlock timestamp notification -->
+<div class="pt-3 border-t border-surface-cardBorder/70 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-amber-400"></span>
+<p class="text-sm font-medium text-amber-400 tracking-wide">
+              Mở khóa lúc <span class="font-semibold text-amber-300">Oct 28, 2026 06:00</span>
+</p>
+</div>
+</div>
+</section>
+<!-- END: DurationSection -->
+<!-- BEGIN: EarlyUnlockTestSection -->
+<section data-purpose="early-unlock-rules">
+<h2 class="text-xs uppercase font-bold tracking-wider text-[#A39281] mb-2.5 px-0.5">
+          Bài kiểm tra mở sớm
+        </h2>
+<div class="bg-surface-card border border-surface-cardBorder rounded-2xl p-4.5 space-y-3.5">
+<!-- Toggle Row -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="p-2 rounded-lg bg-amber-500/10 text-amber-400">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4.5 12h15m-15 0a7.5 7.5 0 1115 0m-15 0a7.5 7.5 0 1015 0M9 9l6 6m0-6l-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<span class="text-base font-semibold text-white">Kèm tính nhẩm</span>
+</div>
+<!-- Custom Amber Switch Toggle -->
+<label aria-label="Kích hoạt kèm tính nhẩm" class="relative inline-flex items-center cursor-pointer tap-highlight-transparent">
+<input checked="" class="sr-only peer" id="math-test-toggle" type="checkbox"/>
+<div class="w-13 h-7 w-[52px] h-[30px] bg-[#2E271F] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-white after:border-gray-300 after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-amber-500 peer-checked:to-amber-400 peer-checked:amber-glow-sm"></div>
+</label>
+</div>
+<!-- Description Hint -->
+<p class="text-xs leading-relaxed text-[#968676] pl-0.5">
+            Gõ đúng câu líu lưỡi luôn là bắt buộc. Sai 3 lần phải chờ 5 phút trước khi thử lại.
+          </p>
+</div>
+</section>
+<!-- END: EarlyUnlockTestSection -->
+<!-- BEGIN: PermissionSection -->
+<section data-purpose="permission-guide">
+<h2 class="text-xs uppercase font-bold tracking-wider text-[#A39281] mb-2.5 px-0.5">
+          Quyền hoạt động
+        </h2>
+<div class="bg-surface-card/75 border border-surface-cardBorder/90 rounded-2xl p-4 flex gap-3.5 items-start">
+<!-- Bell / Warning Icon -->
+<div class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center flex-shrink-0 text-amber-400 mt-0.5">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<!-- Instruction Text -->
+<p class="text-xs leading-relaxed text-[#8E8073]">
+            Cấp quyền báo thức để lịch nền bắt đầu đúng giờ. Nếu chưa cấp, hệ thống có thể trì hoãn lịch khóa của bạn.
+          </p>
+</div>
+</section>
+<!-- END: PermissionSection -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: BottomCTA -->
+<!-- Fixed/Bottom Action Button for mobile UX -->
+<footer class="mt-8 pt-2">
+<button class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-450 to-amber-550 text-[#120D06] font-bold text-base tracking-wide uppercase shadow-lg shadow-amber-500/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2" type="button">
+<svg class="w-5 h-5 text-[#120D06]" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24">
+<path d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Kích hoạt chế độ nhậu</span>
+</button>
+</footer>
+<!-- END: BottomCTA -->
+</div>
+<script data-purpose="interactive-state">
+    // Light script for toggling chip selection visually
+    document.addEventListener('DOMContentLoaded', () => {
+      const chips = document.querySelectorAll('[data-purpose="lock-duration-section"] button');
+      chips.forEach((chip) => {
+        chip.addEventListener('click', () => {
+          // Can be hooked up to state management as needed
+        });
+      });
+    });
+  </script>
+</body></html>

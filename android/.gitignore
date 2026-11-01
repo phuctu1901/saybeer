@@ -1,0 +1,15 @@
+.gradle/
+.kotlin/
+.idea/
+local.properties
+**/build/
+*.jks
+*.keystore
+captures/
+.build-tmp/
+.signing/
+play-store/artifacts/
+play-store/evidence/
+play-store/internal-testers.csv
+docs/design/before-stitch/
+docs/design/screenshots/flows/screenshots/

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SayBeer</string>
+    <string name="shield_open">Mở SayBeer · Nhắn việc / Khẩn cấp</string>
+    <string name="shield_home">Về màn hình chính</string>
+    <string name="accessibility_description">SayBeer nhận tên ứng dụng đang mở để hiển thị màn chắn trên các app bạn đã chọn trong phiên. Không đọc nội dung màn hình, tin nhắn, mật khẩu hoặc thao tác gõ. Dữ liệu chỉ lưu trên thiết bị. Bạn có thể tắt dịch vụ trong Cài đặt bất cứ lúc nào.</string>
+</resources>

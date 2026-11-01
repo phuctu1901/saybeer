@@ -1,0 +1,9 @@
+
+com.tem2t.saybeer.AccessibilityShieldTest:.
+com.tem2t.saybeer.FlowsTest:.........
+com.tem2t.saybeer.OnboardingTest:.
+com.tem2t.saybeer.StoreScreenshotsTest:.
+
+Time: 68.115
+
+OK (12 tests)

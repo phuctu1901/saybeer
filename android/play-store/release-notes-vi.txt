@@ -1,0 +1,5 @@
+SayBeer 1.0.0 cho Android:
+• Chọn và khóa ứng dụng theo thời gian bạn đặt.
+• Mở tạm 15 phút để nhắn việc, kiểm tra mở sớm và mở khẩn cấp.
+• Hẹn lịch tuần, thống kê trên máy và chia sẻ ảnh thành tích.
+• Miễn phí, không quảng cáo, không tài khoản.

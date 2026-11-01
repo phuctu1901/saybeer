@@ -1,0 +1,6 @@
+Giao diện SayBeer mới theo thiết kế Dark Amber:
+• Nút gradient hổ phách, thẻ nội dung và biểu tượng đồng bộ.
+• Bố cục mới cho màn khóa, nhắn việc, kiểm tra mở sớm và hẹn lịch.
+• Nút thao tác chính dễ tiếp cận ở cuối màn hình.
+• Giải thích quyền Trợ năng rõ ràng hơn trước khi mở Cài đặt.
+• Chọn ngày trong tuần và chỉnh giờ bắt đầu/kết thúc trực quan hơn.

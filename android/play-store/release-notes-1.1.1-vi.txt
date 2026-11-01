@@ -1,0 +1,6 @@
+<vi>
+Giao diện Dark Amber mới theo thiết kế SayBeer.
+Sửa lỗi ứng dụng nhắn tin có chức năng gọi, như Zalo, bị ẩn khỏi danh sách khóa.
+Tự tải lại danh sách ứng dụng khi quay lại màn chọn app.
+Giữ mở ứng dụng Điện thoại mặc định và các chức năng khẩn cấp.
+</vi>

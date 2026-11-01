@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Cửa sổ nhắn việc - SayBeer</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            amber: {
+              350: '#FBBF24',
+              450: '#F59E0B',
+              550: '#D97706',
+              650: '#B45309',
+              925: '#1A1208',
+              950: '#0E0903',
+            },
+            night: {
+              900: '#110D08',
+              850: '#17120C',
+              800: '#1F1810',
+              700: '#2A2016',
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Segoe UI"', 'Roboto', 'sans-serif'],
+          },
+          boxShadow: {
+            'glow-amber': '0 0 35px -5px rgba(245, 158, 11, 0.28)',
+            'glow-btn': '0 4px 20px 0 rgba(245, 158, 11, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Amber Glow & Typography Styles -->
+<style data-purpose="custom-styling">
+    /* Subtle amber backdrop radial glow */
+    body {
+      background-color: #0c0804;
+      background-image: radial-gradient(circle at 50% 12%, rgba(245, 158, 11, 0.08) 0%, rgba(12, 8, 4, 0) 70%);
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    /* Sleek glassy borders with amber tints */
+    .amber-card-border {
+      border: 1px solid rgba(245, 158, 11, 0.16);
+      box-shadow: inset 0 1px 0 rgba(255, 230, 180, 0.05), 0 12px 30px -10px rgba(0, 0, 0, 0.6);
+    }
+
+    .amber-input-border {
+      border: 1px solid rgba(217, 119, 6, 0.32);
+      transition: all 0.2s ease-in-out;
+    }
+    .amber-input-border:focus {
+      border-color: rgba(245, 158, 11, 0.8);
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+    }
+
+    /* iOS safe areas */
+    .pt-safe {
+      padding-top: env(safe-area-inset-top, 44px);
+    }
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom, 34px);
+    }
+  </style>
+<!-- END: Custom Amber Glow & Typography Styles -->
+</head>
+<body class="text-stone-200 antialiased flex justify-center min-h-screen">
+<!-- BEGIN: Main Mobile Container -->
+<main class="w-full max-w-md min-h-screen flex flex-col justify-between px-6 pt-safe pb-safe" data-purpose="mobile-screen">
+<!-- BEGIN: Header & Top Section -->
+<header class="w-full pt-3 pb-2 flex items-center justify-between" data-purpose="screen-header">
+<!-- Back button -->
+<button aria-label="Quay lại" class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center text-amber-400 hover:text-amber-300 active:scale-95 transition-transform" id="backBtn" type="button">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Header Title -->
+<h1 class="text-xl font-bold tracking-tight text-stone-100 flex-1 ml-1">Cửa sổ nhắn việc</h1>
+<!-- Status dot/indicator (saybeer context) -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs font-medium text-amber-400">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+        SayBeer
+      </div>
+</header>
+<!-- END: Header & Top Section -->
+<!-- BEGIN: Main Content Area -->
+<div class="flex-1 flex flex-col items-center pt-5 pb-6">
+<!-- Briefcase Icon with Ambient Glow -->
+<div class="relative mb-6" data-purpose="central-icon">
+<div class="absolute inset-0 bg-amber-500/20 rounded-3xl blur-xl"></div>
+<div class="relative w-24 h-24 rounded-3xl bg-gradient-to-b from-stone-850 to-night-900 amber-card-border shadow-glow-amber flex items-center justify-center">
+<!-- Premium styled briefcase icon -->
+<svg class="w-12 h-12 text-amber-450 drop-shadow-[0_4px_8px_rgba(245,158,11,0.35)]" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M7.5 3.75A1.5 1.5 0 006 5.25v13.5a1.5 1.5 0 001.5 1.5h9a1.5 1.5 0 001.5-1.5V5.25a1.5 1.5 0 00-1.5-1.5h-9zm1.5 2.25a.75.75 0 01.75-.75h4.5a.75.75 0 01.75.75v1.5a.75.75 0 01-.75.75h-4.5a.75.75 0 01-.75-.75V6z" fill-rule="evenodd"></path>
+<path d="M4.5 9.75v7.5A2.25 2.25 0 006.75 19.5h10.5a2.25 2.25 0 002.25-2.25v-7.5H4.5z" opacity="0.3"></path>
+<path d="M3.75 8.25A2.25 2.25 0 016 6h12a2.25 2.25 0 012.25 2.25v1.5H3.75v-1.5z"></path>
+</svg>
+</div>
+</div>
+<!-- Main Headline -->
+<h2 class="text-2xl sm:text-[26px] font-extrabold tracking-tight text-stone-100 text-center mb-2">
+        Mở 15 phút để nhắn việc
+      </h2>
+<!-- Subtitle Instruction -->
+<p class="text-stone-400 text-sm text-center mb-6">
+        Gõ đúng câu dưới đây để cam kết:
+      </p>
+<!-- BEGIN: Commitment Card -->
+<div class="w-full bg-night-850/90 rounded-2xl p-5 amber-card-border backdrop-blur-sm shadow-xl flex flex-col mb-4" data-purpose="commitment-card">
+<!-- Label: LỜI HỨA VỚI CHÍNH MÌNH -->
+<span class="text-[11px] font-bold tracking-wider text-amber-400/90 uppercase mb-2.5">
+          Lời hứa với chính mình
+        </span>
+<!-- Target Quote Text -->
+<p class="text-xl sm:text-[22px] font-bold leading-tight text-amber-350 tracking-tight mb-5 select-text" id="targetText">
+          “chỉ nhắn việc, không tâm sự”
+        </p>
+<!-- Input Field Container -->
+<div class="relative w-full">
+<input autocomplete="off" autocorrect="off" class="w-full h-13 px-4 py-3.5 bg-stone-900/90 rounded-xl text-stone-100 placeholder-stone-500 amber-input-border text-base outline-none transition-all duration-200" data-purpose="commitment-input" id="commitInput" placeholder="Gõ lại câu trên..." spellcheck="false" type="text"/>
+<span class="hidden absolute right-3.5 top-1/2 -translate-y-1/2 text-amber-400" id="matchIcon">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</span>
+</div>
+</div>
+<!-- END: Commitment Card -->
+<!-- Helper Notice -->
+<div class="w-full px-1 flex items-start gap-2.5 text-stone-400 text-xs sm:text-[13px] leading-relaxed">
+<svg class="w-4 h-4 text-amber-500/80 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>
+          Hít thở 15 giây sau khi gõ đúng. Cửa sổ sẽ tự đóng khi hết giờ, hoặc khi phiên kết thúc.
+        </span>
+</div>
+</div>
+<!-- END: Main Content Area -->
+<!-- BEGIN: Footer Actions -->
+<footer class="w-full flex flex-col items-center pb-3 space-y-4" data-purpose="screen-footer">
+<!-- Primary Action Button (State changes dynamically) -->
+<button class="w-full h-14 rounded-2xl font-semibold text-base flex items-center justify-center transition-all duration-300 bg-stone-800 text-stone-500 cursor-not-allowed shadow-none active:scale-[0.98]" data-purpose="cta-button" disabled="" id="submitBtn" type="button">
+<span id="btnText">Gõ lời cam kết để tiếp tục</span>
+</button>
+<!-- Remaining Quota Indicator -->
+<p class="text-xs text-stone-400 font-medium tracking-wide flex items-center gap-1.5" data-purpose="quota-text">
+<span class="inline-block w-2 h-2 rounded-full bg-amber-500"></span>
+        Còn <strong class="text-amber-300 font-semibold">3 lần</strong> mở trong cuộc nhậu này.
+      </p>
+</footer>
+<!-- END: Footer Actions -->
+</main>
+<!-- END: Main Mobile Container -->
+<!-- BEGIN: Interactive Logic -->
+<script data-purpose="commitment-validation">
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('commitInput');
+      const submitBtn = document.getElementById('submitBtn');
+      const btnText = document.getElementById('btnText');
+      const matchIcon = document.getElementById('matchIcon');
+      const backBtn = document.getElementById('backBtn');
+
+      // The exact sentence required
+      const targetPhrase = 'chỉ nhắn việc, không tâm sự';
+
+      // Normalize function to allow flexibility with quotes or exact match
+      const normalizeText = (text) => {
+        return text
+          .trim()
+          .replace(/[“"”]/g, '')
+          .toLowerCase();
+      };
+
+      input.addEventListener('input', (e) => {
+        const value = normalizeText(e.target.value);
+
+        if (value === targetPhrase) {
+          // Valid match: Apply glowing amber styling
+          submitBtn.disabled = false;
+          submitBtn.className = 'w-full h-14 rounded-2xl font-bold text-base flex items-center justify-center transition-all duration-300 bg-gradient-to-r from-amber-500 via-amber-450 to-amber-550 text-stone-950 shadow-glow-btn hover:brightness-110 active:scale-[0.98] cursor-pointer';
+          btnText.textContent = 'Mở cửa sổ 15 phút';
+          matchIcon.classList.remove('hidden');
+        } else {
+          // Locked state
+          submitBtn.disabled = true;
+          submitBtn.className = 'w-full h-14 rounded-2xl font-semibold text-base flex items-center justify-center transition-all duration-300 bg-stone-850/80 text-stone-500 cursor-not-allowed border border-stone-800 active:scale-[0.98]';
+          btnText.textContent = 'Gõ lời cam kết để tiếp tục';
+          matchIcon.classList.add('hidden');
+        }
+      });
+
+      // Simple click handling
+      submitBtn.addEventListener('click', () => {
+        if (!submitBtn.disabled) {
+          btnText.textContent = 'Đang bắt đầu 15 giây hít thở...';
+          setTimeout(() => {
+            alert('Đã mở khoá cửa sổ nhắn việc 15 phút!');
+          }, 400);
+        }
+      });
+
+      backBtn.addEventListener('click', () => {
+        if (window.history.length > 1) {
+          window.history.back();
+        }
+      });
+    });
+  </script>
+<!-- END: Interactive Logic -->
+</body></html>

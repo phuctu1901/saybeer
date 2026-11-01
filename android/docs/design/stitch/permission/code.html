@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-black" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>SayBeer - Yêu cầu quyền trợ năng</title>
+<!-- Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Plus Jakarta Sans for clean mobile UI typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              amber: '#F59E0B',
+              amberLight: '#FBBF24',
+              amberDark: '#D97706',
+              gold: '#EAB308',
+              surface: '#181512',
+              card: '#1F1B16',
+              cardBorder: 'rgba(245, 158, 11, 0.15)',
+              muted: '#9E9488',
+            }
+          },
+          boxShadow: {
+            'amber-glow': '0 0 25px -4px rgba(245, 158, 11, 0.35)',
+            'amber-glow-lg': '0 10px 30px -5px rgba(217, 119, 6, 0.45)',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout-tweaks">
+    body {
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    /* iOS Safe Area Support */
+    .pb-safe {
+      padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
+    }
+    .pt-safe {
+      padding-top: max(1rem, env(safe-area-inset-top));
+    }
+  </style>
+</head>
+<body class="h-full w-full bg-[#080705] text-[#ECE7DF] font-sans antialiased overflow-hidden flex items-center justify-center">
+<!-- BEGIN: PhoneFrameWrapper -->
+<!-- Outer shell simulating a sleek edge-to-edge iOS display -->
+<div class="relative w-full max-w-[430px] h-full max-h-[932px] overflow-hidden flex flex-col justify-between bg-[#0B0907] shadow-2xl sm:rounded-[52px] sm:border-[8px] sm:border-[#221F1C]" data-purpose="device-viewport">
+<!-- BEGIN: iOSStatusBar -->
+<header class="relative z-10 w-full pt-safe px-7 pt-3 flex justify-between items-center text-xs font-semibold text-neutral-400">
+<span class="tracking-tight text-white font-medium">14:39</span>
+<div class="flex items-center space-x-2">
+<!-- Signal bars icon -->
+<svg class="w-3.5 h-3.5 fill-current text-neutral-300" viewbox="0 0 24 24">
+<path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.22 19.58 10.57 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"></path>
+</svg>
+<!-- Wifi icon -->
+<svg class="w-3.5 h-3.5 fill-current text-neutral-300" viewbox="0 0 24 24">
+<path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4zm0 3.5c3.67 0 7.02 1.4 9.54 3.73L12 18.3 2.46 11.23C4.98 8.9 8.33 7.5 12 7.5z"></path>
+</svg>
+<!-- Battery badge -->
+<div class="flex items-center space-x-0.5">
+<div class="w-5 h-2.5 rounded-sm border border-neutral-400 p-[1px] flex items-center">
+<div class="h-full w-[85%] bg-amber-400 rounded-[1px]"></div>
+</div>
+<div class="w-0.5 h-1 bg-neutral-400 rounded-r-sm"></div>
+</div>
+</div>
+</header>
+<!-- END: iOSStatusBar -->
+<!-- BEGIN: BlurredBackgroundAppUI -->
+<!-- Represents the underlying SayBeer screen with dimming & blur -->
+<main class="absolute inset-0 z-0 flex flex-col justify-between px-6 pt-16 pb-12 select-none opacity-40 blur-[5px] scale-[0.98] transition-all" data-purpose="background-app-screen">
+<!-- App Top Bar -->
+<div class="flex items-center justify-between">
+<span class="text-amber-500 font-extrabold tracking-widest text-sm">SAYBEER</span>
+<div class="flex items-center space-x-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400/90 text-xs font-medium">
+<svg class="w-3 h-3 fill-amber-400" viewbox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"></path></svg>
+<span>Riêng tư</span>
+</div>
+</div>
+<!-- Mascot & Slogan Centerpiece -->
+<div class="flex flex-col items-center justify-center text-center my-auto">
+<div class="relative w-28 h-28 mb-4 flex items-center justify-center">
+<div class="absolute inset-0 bg-amber-500/20 blur-2xl rounded-full"></div>
+<!-- Beer Mug Icon Art -->
+<div class="relative text-6xl">🍺</div>
+</div>
+<h1 class="text-3xl font-extrabold text-white tracking-tight">SayBeer</h1>
+<p class="mt-2 text-neutral-400 text-sm">Hãy say bia.<br/>Xin đừng <span class="text-amber-400 font-semibold">“say”</span> bậy.</p>
+</div>
+<!-- Background Bottom Navigation Simulation -->
+<div class="space-y-3 w-full">
+<div class="h-14 w-full rounded-2xl bg-amber-500 text-neutral-950 font-bold flex items-center justify-center text-base">
+          Bắt đầu chế độ nhậu
+        </div>
+<div class="grid grid-cols-2 gap-3">
+<div class="h-16 rounded-2xl bg-stone-900 border border-stone-800 flex items-center justify-center text-xs text-neutral-400 font-medium">Hẹn lịch</div>
+<div class="h-16 rounded-2xl bg-stone-900 border border-stone-800 flex items-center justify-center text-xs text-neutral-400 font-medium">Thống kê</div>
+</div>
+</div>
+</main>
+<!-- END: BlurredBackgroundAppUI -->
+<!-- BEGIN: BackdropScrim -->
+<!-- Dimmed ambient glow backdrop -->
+<div class="absolute inset-0 z-20 bg-[#050403]/75 backdrop-blur-[7px] transition-opacity" data-purpose="modal-scrim"></div>
+<!-- END: BackdropScrim -->
+<!-- BEGIN: PermissionModalSheet -->
+<!-- The redesigned sleek permission modal -->
+<section class="relative z-30 w-full px-4 pb-safe pb-4 flex flex-col justify-end" data-purpose="permission-modal-container">
+<div class="relative w-full rounded-[32px] bg-[#181512]/95 border border-amber-500/25 p-6 shadow-2xl shadow-black/90 backdrop-blur-xl flex flex-col items-center overflow-hidden">
+<!-- Subtle Top Amber Ambient Glow -->
+<div class="absolute -top-16 left-1/2 -translate-x-1/2 w-48 h-32 bg-amber-500/20 blur-3xl pointer-events-none rounded-full"></div>
+<!-- Pull indicator bar for bottom-sheet ergonomics -->
+<div class="w-10 h-1 bg-stone-700/60 rounded-full mb-5 -mt-1"></div>
+<!-- Security Shield Icon Badge -->
+<div class="relative mb-4 flex items-center justify-center" data-purpose="shield-icon-badge">
+<div class="absolute inset-0 bg-amber-500/25 blur-lg rounded-full"></div>
+<div class="relative w-14 h-14 rounded-2xl bg-gradient-to-b from-[#2B2319] to-[#1A1510] border border-amber-500/30 flex items-center justify-center shadow-inner">
+<svg class="w-7 h-7 text-amber-400 drop-shadow-[0_2px_8px_rgba(245,158,11,0.5)]" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M12.516 2.17a.75.75 0 0 0-1.032 0 11.209 11.209 0 0 1-7.877 3.08.75.75 0 0 0-.722.515A12.74 12.74 0 0 0 2.25 9.75c0 5.942 4.064 10.933 9.563 12.348a.749.749 0 0 0 .374 0c5.499-1.415 9.563-6.406 9.563-12.348 0-1.39-.223-2.73-.635-3.985a.75.75 0 0 0-.722-.516l-.143.001c-2.996 0-5.717-1.17-7.734-3.08ZM12 4.417c2.19 1.54 4.887 2.457 7.747 2.57.29 1.157.453 2.373.453 3.613 0 5.234-3.565 9.638-8.2 10.937C7.365 20.238 3.8 15.834 3.8 10.6c0-1.24.163-2.456.453-3.613C7.113 6.874 9.81 5.957 12 4.417Zm-.22 4.313a.75.75 0 0 1 1.06 0l2.5 2.5a.75.75 0 1 1-1.06 1.06L12.5 10.51v4.74a.75.75 0 0 1-1.5 0V10.51l-1.78 1.78a.75.75 0 0 1-1.06-1.06l2.62-2.5Z" fill-rule="evenodd"></path>
+</svg>
+</div>
+</div>
+<!-- Title -->
+<h2 class="text-xl font-bold text-white text-center tracking-tight leading-snug">
+          Cho phép SayBeer khóa app?
+        </h2>
+<!-- Explanatory Text -->
+<p class="mt-3 text-sm text-[#C8BFB3] text-center leading-relaxed font-normal">
+          SayBeer dùng dịch vụ Trợ năng để nhận tên app đang mở và phủ màn chắn lên các app bạn chọn khi phiên đang chạy.
+        </p>
+<!-- Privacy Shield Callout Box -->
+<div class="mt-4 w-full rounded-2xl bg-[#221D17]/80 border border-amber-500/20 p-3.5 flex items-start space-x-3" data-purpose="privacy-callout-card">
+<div class="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center">
+<svg class="w-3 h-3 text-emerald-400" fill="currentColor" viewbox="0 0 20 20">
+<path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path>
+</svg>
+</div>
+<p class="text-xs text-[#DBD4C9] leading-relaxed">
+<strong class="font-semibold text-white">Bảo mật tuyệt đối:</strong> Không đọc nội dung màn hình, tin nhắn, mật khẩu hay thao tác gõ. Không gửi dữ liệu ra ngoài thiết bị.
+          </p>
+</div>
+<!-- Instructional Guidance -->
+<div class="mt-3.5 w-full flex items-center space-x-2 text-xs text-[#9E9488] px-1" data-purpose="instruction-step">
+<svg class="w-4 h-4 text-amber-400/70 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="leading-normal">
+            Bật tại <span class="text-amber-300 font-medium">Cài đặt → Trợ năng → Ứng dụng đã cài đặt</span>. Có thể tắt bất cứ lúc nào.
+          </span>
+</div>
+<!-- Action Buttons (Ergonomic Touch Stack) -->
+<div class="mt-6 w-full space-y-2.5" data-purpose="modal-actions">
+<!-- Primary CTA Button -->
+<button class="group relative w-full h-[52px] rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 hover:brightness-105 active:scale-[0.98] transition-all duration-150 shadow-amber-glow flex items-center justify-center font-bold text-stone-950 text-base" type="button">
+<span class="flex items-center space-x-2">
+<span>Đồng ý • Mở Cài đặt</span>
+<svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24">
+<path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</span>
+</button>
+<!-- Secondary Dismiss Button -->
+<button class="w-full h-11 rounded-2xl bg-transparent hover:bg-stone-800/40 active:scale-[0.98] transition-all duration-150 flex items-center justify-center text-sm font-medium text-stone-400 hover:text-amber-200/90" type="button">
+            Để sau
+          </button>
+</div>
+</div>
+</section>
+<!-- END: PermissionModalSheet -->
+<!-- BEGIN: iOSHomeIndicator -->
+<div class="relative z-30 w-full flex justify-center pb-2 pointer-events-none">
+<div class="w-32 h-1 bg-stone-500/50 rounded-full"></div>
+</div>
+<!-- END: iOSHomeIndicator -->
+</div>
+<!-- END: PhoneFrameWrapper -->
+</body></html>

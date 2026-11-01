@@ -1,0 +1,194 @@
+<!DOCTYPE html><html class="dark" lang="vi"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>Kiểm tra tỉnh táo - SayBeer</title>
+<!-- Tailwind CSS v3 with forms and container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            amber: {
+              450: '#F59E0B',
+              550: '#D97706',
+              deep: '#92400E'
+            },
+            surface: {
+              base: '#0F0D0B',
+              card: '#1A1613',
+              input: '#221D18',
+              border: '#332A22',
+              'border-subtle': '#2B231C'
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Segoe UI"', 'Roboto', 'sans-serif'],
+            mono: ['"SF Mono"', 'Menlo', 'monospace']
+          },
+          boxShadow: {
+            'amber-glow': '0 0 25px -5px rgba(245, 158, 11, 0.35)',
+            'amber-sm': '0 0 12px -2px rgba(245, 158, 11, 0.25)',
+            'card': '0 10px 30px -10px rgba(0, 0, 0, 0.6)'
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-enhancements">
+    /* Custom subtle glass & glow utilities */
+    .glow-amber-hover:focus-within {
+      border-color: #F59E0B;
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.22);
+    }
+    /* Safe-area insets for modern iOS displays */
+    .pt-safe {
+      padding-top: max(env(safe-area-inset-top), 16px);
+    }
+    .pb-safe {
+      padding-bottom: max(env(safe-area-inset-bottom), 16px);
+    }
+  </style>
+</head>
+<body class="bg-[#0A0908] text-[#E6E1DC] antialiased selection:bg-amber-500 selection:text-black min-h-screen flex justify-center">
+<!-- Mobile Screen Container -->
+<main class="w-full max-w-[430px] min-h-screen flex flex-col justify-between px-5 pt-safe pb-safe relative overflow-x-hidden bg-radial from-[#1A140E] via-[#0F0D0B] to-[#0A0908]">
+<!-- Ambient background glows -->
+<div aria-hidden="true" class="absolute -top-24 -right-20 w-64 h-64 bg-amber-600/10 rounded-full blur-3xl pointer-events-none"></div>
+<div aria-hidden="true" class="absolute top-1/2 -left-28 w-56 h-56 bg-amber-700/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- BEGIN: TopHeaderAndTimer -->
+<header class="w-full z-10 pt-2 pb-4" data-purpose="header-section">
+<!-- Nav Bar Row -->
+<div class="flex items-center justify-between h-12 mb-3">
+<!-- Back Button -->
+<button aria-label="Quay lại" class="w-10 h-10 -ml-1 rounded-full flex items-center justify-center text-amber-400 hover:text-amber-300 hover:bg-white/5 active:scale-95 transition-all" type="button">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24">
+<path d="M19 12H5m7 7l-7-7 7-7"></path>
+</svg>
+</button>
+<!-- Page Title -->
+<h1 class="text-xl font-bold tracking-tight text-[#F7F4F0] flex items-center gap-2">
+<span class="">Kiểm tra tỉnh táo</span>
+</h1>
+<div aria-hidden="true" class="w-10"></div>
+</div>
+<!-- Countdown Progress Bar & Time Label -->
+<div class="flex items-center gap-3 pt-1">
+<!-- Progress track -->
+<div class="flex-1 h-2 bg-[#251E18] rounded-full overflow-hidden p-[1px] border border-amber-950/40">
+<div class="h-full rounded-full bg-gradient-to-r shadow-[0_0_8px_rgba(245,158,11,0.6)] transition-all duration-1000 ease-linear from-rose-600 via-amber-500 to-rose-400" id="countdown-bar" style="width: 0%;">
+</div>
+</div>
+<!-- Time Remaining Badge -->
+<div class="flex items-center gap-1.5 pl-1 shrink-0 font-mono text-sm font-semibold tracking-wide text-amber-400">
+<span class="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+<span id="timer-display" class="text-rose-400">0s</span>
+</div>
+</div>
+</header>
+<!-- END: TopHeaderAndTimer -->
+<!-- BEGIN: SobrietyChallengeTasks -->
+<section class="flex-1 flex flex-col justify-start gap-5 py-2 z-10" data-purpose="test-challenges">
+<!-- Section 1: Tongue Twister Typing Test -->
+<article class="flex flex-col gap-2" data-purpose="text-verification-card">
+<div class="flex items-center justify-between px-1">
+<span class="text-[11px] font-bold tracking-widest uppercase text-amber-500/80">
+            GÕ CHÍNH XÁC CÂU SAU • ĐÚNG CẢ DẤU
+          </span>
+</div>
+<div class="bg-gradient-to-b from-[#1C1713] to-[#14100D] border border-[#3A2E22]/60 rounded-2xl p-4 shadow-card">
+<!-- Quote Display -->
+<div class="mb-3.5 px-1 py-1">
+<p class="text-lg font-semibold leading-relaxed text-[#FFC876] font-sans tracking-wide">
+              “khi đi cưa ngọn khi về cũng cưa ngọn”
+            </p>
+</div>
+<!-- Typing Input Field -->
+<div class="relative rounded-xl border border-[#382D22] bg-[#120F0D] transition-all glow-amber-hover">
+<input autocapitalize="off" autocomplete="off" autocorrect="off" class="w-full bg-transparent px-4 py-3.5 text-base text-[#F5F2EE] placeholder-[#6E6358] focus:outline-none border-none rounded-xl focus:ring-0" id="quote-input" placeholder="Gõ lại câu trên..." spellcheck="false" type="text">
+</div>
+</div>
+</article>
+<!-- Section 2: Mental Math Challenge -->
+<article class="flex flex-col gap-2" data-purpose="math-verification-card">
+<div class="flex items-center justify-between px-1">
+<span class="text-[11px] font-bold tracking-widest uppercase text-amber-500/80">
+            TÍNH NHẨM
+          </span>
+</div>
+<div class="bg-gradient-to-b from-[#1C1713] to-[#14100D] border border-[#3A2E22]/60 rounded-2xl p-4 shadow-card">
+<!-- Equation Display -->
+<div class="flex items-center justify-start py-1 px-1 mb-3.5">
+<div class="font-mono text-3xl font-extrabold tracking-wider text-white">
+              49 + 59 = <span class="text-amber-400">?</span>
+</div>
+</div>
+<!-- Number Input Field -->
+<div class="relative rounded-xl border border-[#382D22] bg-[#120F0D] transition-all glow-amber-hover">
+<input class="w-full bg-transparent px-4 py-3.5 text-base font-mono text-[#F5F2EE] placeholder-[#6E6358] focus:outline-none border-none rounded-xl focus:ring-0" id="math-input" inputmode="numeric" pattern="[0-9]*" placeholder="Kết quả" type="number">
+</div>
+</div>
+</article>
+</section>
+<!-- END: SobrietyChallengeTasks -->
+<!-- BEGIN: ActionsAndDisclaimer -->
+<footer class="w-full flex flex-col gap-3 pt-4 pb-2 z-10" data-purpose="footer-controls">
+<!-- Primary Action: Unlock Button -->
+<button class="w-full py-4 px-6 rounded-2xl font-bold text-base tracking-wide text-stone-950 bg-gradient-to-r from-amber-500 to-amber-600 hover:brightness-105 active:scale-[0.985] shadow-[0_4px_20px_rgba(245,158,11,0.25)] transition-all duration-200 flex items-center justify-center gap-2.5" id="btn-unlock" type="button">
+<svg class="w-5 h-5 text-stone-950" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+<path d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="">Mở khóa</span>
+</button>
+<!-- Secondary Action: Keep Locked Glass Button -->
+<button class="w-full py-3.5 px-6 rounded-2xl font-medium text-sm text-stone-300 hover:text-white bg-[#1C1713]/90 hover:bg-[#251E18] border border-amber-500/20 active:scale-[0.985] transition-all duration-200 flex items-center justify-center" id="btn-keep-locked" type="button">
+        Thôi, để khóa tiếp
+      </button>
+<!-- Legal & Usage Disclaimer Note -->
+<div class="px-2 pt-1 pb-1">
+<p class="text-center text-[12px] leading-relaxed text-[#877C70]">
+          Bạn có 90 giây mỗi lượt. Sai 3 lần phải chờ 5 phút.<br>
+          Đây chỉ là bước tự cam kết, không đo nồng độ cồn hay khả năng lái xe.
+        </p>
+</div>
+<!-- iOS Home Bar Spacer & Indicator -->
+<div aria-hidden="true" class="w-full flex justify-center pt-1">
+<div class="w-32 h-1 bg-[#473B2F] rounded-full opacity-60"></div>
+</div>
+</footer>
+<!-- END: ActionsAndDisclaimer -->
+</main>
+<!-- Interactive Logic for Demo Countdown & Validation Feedback -->
+<script data-purpose="countdown-and-interaction">
+    document.addEventListener('DOMContentLoaded', () => {
+      let secondsLeft = 80;
+      const totalSeconds = 90;
+      const timerDisplay = document.getElementById('timer-display');
+      const progressBar = document.getElementById('countdown-bar');
+
+      const interval = setInterval(() => {
+        if (secondsLeft <= 0) {
+          clearInterval(interval);
+          timerDisplay.textContent = '0s';
+          progressBar.style.width = '0%';
+          return;
+        }
+        secondsLeft--;
+        timerDisplay.textContent = `${secondsLeft}s`;
+        const percentage = (secondsLeft / totalSeconds) * 100;
+        progressBar.style.width = `${Math.max(0, percentage)}%`;
+
+        // Dynamic visual urgency when low on time
+        if (secondsLeft <= 15) {
+          timerDisplay.classList.remove('text-amber-400');
+          timerDisplay.classList.add('text-rose-400');
+          progressBar.classList.remove('from-amber-600', 'via-amber-450', 'to-amber-300');
+          progressBar.classList.add('from-rose-600', 'via-amber-500', 'to-rose-400');
+        }
+      }, 1000);
+    });
+  </script>
+
+
+</body></html>

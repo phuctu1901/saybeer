@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>SayBeer - Hẹn Lịch</title>
+<!-- Tailwind CSS CDN with forms and container queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            amber: {
+              350: '#FBBF24',
+              450: '#F59E0B',
+              550: '#D97706',
+              925: '#1a1309',
+            },
+            surface: {
+              bg: '#11100E',
+              card: '#1C1917',
+              inner: '#26221F',
+              stroke: '#362E26',
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Segoe UI"', 'Roboto', 'sans-serif'],
+          },
+          boxShadow: {
+            'amber-glow': '0 0 25px -4px rgba(245, 158, 11, 0.35)',
+            'amber-subtle': '0 0 15px -3px rgba(217, 119, 6, 0.15)',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-styling">
+    /* Tối ưu vuốt chạm mobile và hiệu ứng mờ kính tối */
+    body {
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    .amber-gradient-cta {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    }
+    .amber-card-border {
+      border: 1px solid rgba(245, 158, 11, 0.12);
+    }
+    .button-active:active {
+      transform: scale(0.985);
+      transition: transform 0.1s ease;
+    }
+  </style>
+</head>
+<body class="bg-[#0D0B0A] text-stone-100 font-sans min-h-screen flex justify-center selection:bg-amber-500/30">
+<!-- Mobile Container Mockup (iOS optimized, max-w-md) -->
+<main class="w-full max-w-md min-h-screen flex flex-col justify-between px-5 pt-3 pb-8 relative bg-gradient-to-b from-[#14100D] via-[#0E0C0B] to-[#0A0908] overflow-hidden">
+<!-- Top Decorative Glow -->
+<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-40 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex-1 flex flex-col space-y-6 z-10">
+<!-- BEGIN: NavigationHeader -->
+<header class="flex items-center space-x-3.5 pt-2 pb-1" data-purpose="header-section">
+<!-- Back Button -->
+<button aria-label="Quay lại" class="w-10 h-10 rounded-full flex items-center justify-center bg-stone-900/80 border border-stone-800 text-amber-450 hover:bg-stone-850 active:scale-95 transition-all" type="button">
+<svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Page Title -->
+<h1 class="text-2xl font-bold tracking-tight text-white/95">Hẹn lịch</h1>
+</header>
+<!-- END: NavigationHeader -->
+<!-- BEGIN: TimeOverviewCard -->
+<section class="bg-[#1C1814]/90 backdrop-blur-md rounded-3xl p-5 border border-amber-500/20 shadow-amber-subtle relative overflow-hidden" data-purpose="time-overview">
+<!-- Inner ambient highlight -->
+<div class="absolute -right-8 -top-8 w-28 h-28 bg-amber-500/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-baseline justify-between mb-3.5">
+<span class="text-base font-medium text-stone-300">Mở khóa</span>
+<!-- Dynamic Highlight Time -->
+<div class="flex items-baseline space-x-1.5">
+<span class="text-4xl font-extrabold tracking-tight text-amber-450 drop-shadow-[0_2px_10px_rgba(245,158,11,0.3)]">06:00</span>
+</div>
+</div>
+<div class="h-[1px] w-full bg-stone-800/80 mb-3.5"></div>
+<!-- Duration & Status Metadata -->
+<div class="flex items-center text-stone-400 text-sm font-normal">
+<svg class="h-4 w-4 mr-1.5 text-amber-500/80 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span class="text-stone-300 font-medium">Thời lượng:</span>
+<span class="ml-1 text-stone-200">12 giờ 0 phút</span>
+<span class="mx-1.5 text-amber-500/60">•</span>
+<span class="text-amber-400/90 font-medium flex items-center">
+<svg class="h-3.5 w-3.5 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+            qua đêm
+          </span>
+</div>
+</section>
+<!-- END: TimeOverviewCard -->
+<!-- BEGIN: LockAppsSection -->
+<section class="space-y-2.5" data-purpose="locked-apps-container">
+<h2 class="text-xs font-semibold uppercase tracking-wider text-amber-400/75 pl-1">App bị khóa</h2>
+<!-- Interactive App Selection Tile -->
+<button class="w-full bg-[#181412] hover:bg-[#201B17] active:bg-[#251F1A] border border-stone-800/90 hover:border-amber-500/30 rounded-2xl p-4 flex items-center justify-between transition-all duration-150 group button-active" type="button">
+<div class="flex items-center space-x-3.5">
+<!-- App Grid Icon -->
+<div class="w-10 h-10 rounded-xl bg-stone-900 border border-stone-800 flex items-center justify-center text-amber-450 group-hover:text-amber-350 transition-colors">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 10h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 16h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4z"></path>
+</svg>
+</div>
+<!-- Title -->
+<span class="text-[15px] font-medium text-stone-200">Chọn app cần khóa</span>
+</div>
+<!-- Status badge + Arrow -->
+<div class="flex items-center space-x-1.5 text-stone-400">
+<span class="text-sm font-normal text-stone-400">Chưa chọn</span>
+<svg class="h-4 w-4 text-stone-500 group-hover:text-stone-300 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.25 4.5l7.5 7.5-7.5 7.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</button>
+</section>
+<!-- END: LockAppsSection -->
+<!-- BEGIN: PermissionsSection -->
+<section class="space-y-2.5" data-purpose="permissions-container">
+<h2 class="text-xs font-semibold uppercase tracking-wider text-amber-400/75 pl-1">Quyền hoạt động</h2>
+<div class="bg-[#181412] border border-stone-800/90 rounded-2xl p-4.5 space-y-4">
+<!-- Permission Description -->
+<div class="flex items-start space-x-2.5">
+<svg class="h-4 w-4 text-amber-450/90 mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<p class="text-[13px] leading-relaxed text-stone-400">
+              Cấp quyền báo thức để lịch nền bắt đầu đúng giờ. Nếu chưa cấp, thiết bị có thể trì hoãn lịch.
+            </p>
+</div>
+<!-- Secondary Dark Button with Amber Border -->
+<button class="w-full py-3.5 px-4 rounded-2xl bg-stone-900/80 hover:bg-[#201B17] active:bg-[#251F1A] border border-amber-500/20 text-amber-400 font-semibold text-sm flex items-center justify-center space-x-2 transition-all button-active shadow-sm" type="button"><svg class="h-4 w-4 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="">Cho phép báo thức chính xác</span></button>
+</div>
+</section>
+<!-- END: PermissionsSection -->
+</div>
+<!-- BEGIN: BottomActionAndFooter -->
+<div class="pt-6 pb-2 space-y-4 z-10" data-purpose="footer-action-area">
+<!-- Main Amber Gradient CTA Button -->
+<button class="w-full py-4 px-6 rounded-2xl amber-gradient-cta text-[#1A1005] font-bold text-lg tracking-wide shadow-amber-glow hover:brightness-110 active:brightness-95 transition-all button-active flex items-center justify-center space-x-2.5" type="button"><span class="">Lưu lịch</span><svg class="h-5 w-5 text-[#1A1005]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 12.75l6 6 9-13.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+<!-- System Notice Disclaimer -->
+<p class="text-[12px] leading-relaxed text-center text-stone-500 px-3 font-normal">
+        Lịch sử dụng múi giờ hiện tại của thiết bị. Sau khi buộc dừng SayBeer, hãy mở lại app để khôi phục hoạt động.
+      </p>
+<!-- iOS Home Indicator Spacing -->
+<div class="w-32 h-1 bg-stone-700/50 rounded-full mx-auto mt-2"></div>
+</div>
+<!-- END: BottomActionAndFooter -->
+</main>
+
+
+</body></html>
